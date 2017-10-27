@@ -296,8 +296,15 @@ input, button {
 }
 
 .app__hello {
+  font-size: 1.3rem;
+  color: #fce0e0;
+  font-weight: normal;
+  margin-bottom: 3rem;
+}
+
+.app__success {
   font-size: 2.2rem;
-  color: #fff;
+  color: #f7f0f0;
   font-weight: normal;
   margin-bottom: 3rem;
 }

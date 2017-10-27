@@ -289,11 +289,18 @@ input, button {
   }
   
   &__hello {
-    font-size: 2.2rem;
-    color: #fff;
+    font-size: 1.3rem;
+    color: rgb(252, 224, 224);
     font-weight: normal;
     margin-bottom: 3rem;
   }
+  &__success {
+    font-size: 2.2rem;
+    color: rgb(247, 240, 240);
+    font-weight: normal;
+    margin-bottom: 3rem;
+  }
+  
   
   &__user {
     position: relative;
