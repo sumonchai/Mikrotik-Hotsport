@@ -1,4 +1,4 @@
-@import "compass/css3";
+// @import "compass/css3";
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -37,7 +37,7 @@ input, button {
 .cont {
   position: relative;
   height: 100%;
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg');
+  background-image: url('../img/bg.jpg');
   background-size: cover;
   overflow: auto;
   font-family: $openSans;
@@ -52,10 +52,18 @@ input, button {
   height: 53rem;
   overflow: hidden;
 }
+.logo{
+  position: relative;
+  min-width: 30%;
+  min-height: 50%;
+  background-image: url("../img/rb.jpg");
+  background-size: cover;
+  overflow: auto;
+}
 .login {
   position: relative;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(146, 135, 187, 0.8) 0%, rgba(0,0,0,0.6) 100%);
+  background: linear-gradient(to bottom, rgba(215, 214, 219, 0.8) 0%, rgba(0,0,0,0.6) 100%);
   transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
   transform: scale(1);
   
@@ -134,7 +142,7 @@ input, button {
     height: 4rem;
     margin: 5rem 0 2.2rem;
     color: rgba(255,255,255,0.8);
-    background: rgb(247, 85, 44);
+    background: rgb(255, 97, 0);
     font-size: 1.5rem;
     border-radius: 3rem;
     cursor: pointer;
@@ -184,7 +192,7 @@ input, button {
   
   &__signup {
     font-size: 1.2rem;
-    color: #ABA8AE;
+    color: rgb(228, 226, 229);
     
     a {
       color: #fff;
@@ -412,7 +420,7 @@ input, button {
     height: 4.6rem;
     margin-right: -2.3rem;
     margin-bottom: -2.3rem;
-    background: #FC3768;
+    background: #FF6100;
     color: #fff;
     font-size: 2rem;
     border-radius: 50%;
