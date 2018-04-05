@@ -26,14 +26,14 @@
 
     <script type="text/javascript" src="/md5.js"></script>
     <script type="text/javascript">
-    <!--
+    
             function doLogin() {
                 document.sendin.username.value = document.login.username.value;
                 document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
                 document.sendin.submit();
                 return false;
             }
-    //-->
+    
     </script> $(endif)
 
     <div class="cont">
@@ -42,35 +42,6 @@
                 <div class="logo"></div>
 
 
-                <!-- Fixed navbar -->
-                <!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">HotSpot Service</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-flag"></i> Change Language <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="$(link-login-only)?target=%2F&amp;dst=$(link-orig-esc)">English</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)">Latvinski</a></li>
-                        <li><a href="$(link-login-only)?target=pl&amp;dst=$(link-orig-esc)">Polski</a></li>
-
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav> 
--->
 
                 <!-- Signup Form -->
 
@@ -85,21 +56,17 @@
                         <input type="hidden" name="popup" value="true" />
 
                         <div class="login__row">
-                            <!-- <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
                                 <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
-                            </svg> -->
-                            <!-- <input type="text" class="login__input name" name="username" value="$(username)" placeholder="Username" required/> -->
+                            </svg>
+                            <input type="text" class="login__input name" name="username" value="$(username)" placeholder="Username" required/>
+                
+                        </div>
+                         <div class="login__row">
                             <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
                                 <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
                             </svg>
-                            <input type="password" class="login__input name" name="username" value="$(username)" placeholder="Password" required/>
-
-                        <!-- </div> -->
-                        <!-- <div class="login__row">
-                            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
-                                <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
-                            </svg>
-                            <input class="login__input pass" placeholder="Password" name="password" type="password" />> -->
+                            <input class="login__input pass" placeholder="Password" name="password" type="password" />
                         </div>
                         <button type="submit" class="login__submit">Sign in</button>
 
