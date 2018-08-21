@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html>
+	<head>
+		<title>BANGKOK CRYSTAL</title>
+		<meta charset="utf-8" />
+		<!-- MIKROTIK -->
+		$(if refresh-timeout)
+		<meta http-equiv="refresh" content="$(refresh-timeout-secs)">
+		$(endif)
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+		<!-- MIKROTIK  -->
+		<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+		<table border="1" width="70%">
+		$(if login-by == 'trial')
+			<strong>Welcome trial user!</strong><br>
+		$(elif login-by != 'mac')
+			<strong>Welcome $(username)!</strong><br>
+		<hr />
+		$(endif)
+			<tr><td>IP address</td><td>$(ip)</td></tr>
+			<tr><td>bytes up/down</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+		$(if session-time-left)
+			<tr><td>connected / left</td><td>$(uptime) / $(session-time-left)</td></tr>
+		$(else)
+			<tr><td>connected</td><td>$(uptime)</td></tr>
+		$(endif)
+		$(if blocked == 'yes')
+			<tr><td>status</td><td><div style="color: #FF8080">
+		<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+		$(elif refresh-timeout)
+			<tr><td>status refresh</td><td>$(refresh-timeout)</td>
+		$(endif)
+		</table>
+		$(if login-by-mac != 'yes')
+		<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+		<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+		<!-- end of user manager link -->
+		<button type="submit" class="btn btn-login">LogOff</button>
+		$(endif)
+		</form>
+
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="http://facebook.com/bangkokcrystal" class="icon fa-facebook"><span class="label">FACEBOOK</span></a></li>
+					<li><a href="http://youtube.com/bangkokcrystal" class="icon fa-youtube"><span class="label">YOUTUBE</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; BANGKOK CRYSTAL CO., LTD.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

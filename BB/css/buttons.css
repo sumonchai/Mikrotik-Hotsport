@@ -1,0 +1,253 @@
+/* ------------------------------------------
+CSS3 FACEBOOK-STYLE BUTTONS (Nicolas Gallagher)
+Licensed under Unlicense
+http://github.com/necolas/css3-facebook-buttons
+------------------------------------------ */
+
+
+/* ------------------------------------------------------------------------------------------------------------- BUTTON */
+
+       .footer {
+	margin: 20px 0 50px;
+	font-size: 11px;
+	color: #999;
+	text-align: center;
+}
+        .footer a { color: #666;} 
+.uibutton { 
+    position: relative; 
+    z-index: 1;
+    overflow: visible; 
+    display: inline-block; 
+    padding: 0.3em 0.6em 0.375em; 
+    border: 1px solid #999; 
+    border-bottom-color: #888;
+    margin: 0;
+    text-decoration: none; 
+    text-align: center;
+    font: bold 11px/normal 'lucida grande', tahoma, verdana, arial, sans-serif; 
+    white-space: nowrap; 
+    cursor: pointer; 
+    /* outline: none; */
+    color: #333; 
+    background-color: #eee;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f6f6), to(#e4e4e3));
+    background-image: -moz-linear-gradient(#f5f6f6, #e4e4e3);
+    background-image: -o-linear-gradient(#f5f6f6, #e4e4e3);
+    background-image: linear-gradient(#f5f6f6, #e4e4e3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f5f6f6', EndColorStr='#e4e4e3'); 
+	/* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    /* IE hacks */
+    zoom: 1; 
+    *display: inline; 
+}
+
+.uibutton:hover,
+.uibutton:focus,
+.uibutton:active {
+    border-color: #080 #080 #070;
+}
+
+.uibutton:active {
+    border-color: #aaa;
+    background: #ddd;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* overrides extra padding on button elements in Firefox */
+.uibutton::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+/* ............................................................................................................. Icons */
+
+.uibutton.icon:before {
+    content: "";
+    position: relative; 
+    top: 1px; 
+    float:left;
+    width: 10px; 
+    height: 12px; 
+    margin: 0 0.5em 0 0; 
+    background: url(fb-icons.png) 99px 99px no-repeat;
+}
+
+.uibutton.edit:before  { background-position: 0 0; }
+.uibutton.add:before  { background-position: -10px 0; }
+.uibutton.secure:before  { background-position: -20px 0; }
+.uibutton.prev:before  { background-position: -30px 0; }
+.uibutton.next:before  { float:right; margin: 0 -0.25em 0 0.5em; background-position: -40px 0; }
+
+/* ------------------------------------------------------------------------------------------------------------- BUTTON EXTENSIONS */
+
+/* ............................................................................................................. Large */
+
+.uibutton.large {
+	font-size: 14px;
+	text-align: justify;
+}
+
+.uibutton.login {
+	font-size: 14px;
+	text-align: center;
+	width: 130px;
+}
+.textInput{background-color:transparent;border:0;outline:0;width:100%;background:#fff;border:solid #bdc7d8;border-width:1px 0;cursor:default;position:relative;}
+form{
+	margin:0;
+	padding:0;
+	text-align: left;
+}
+label{cursor:pointer;color:#666;font-weight:bold;vertical-align:middle}
+label input{font-weight:normal}
+textarea,.inputtext,.inputpassword{border:1px solid #bdc7d8;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-size: 11px;padding:3px;-webkit-appearance:none;-webkit-border-radius:0}
+select{border:1px solid #bdc7d8;font-family:"lucida grande",tahoma,verdana,arial,sans-serif;font-size: 11px;padding:2px}
+.inputtext,.inputpassword{margin:0;padding-bottom:4px}
+.inputradio{padding:0;margin:0 5px 0 0;vertical-align:middle}
+.inputcheckbox{border:0;vertical-align:middle}
+.inputbutton,.inputsubmit{border-style:solid;border-width:1px;border-color:#d9dfea #0e1f5b #0e1f5b #d9dfea;background-color:#3b5998;color:#fff;padding:2px 15px 3px 15px;text-align:center}
+.inputsubmit_disabled{background-color:#999;border-bottom:1px solid #000;border-right:1px solid #666;color:#fff}
+.inputaux{background:#f0f0f0;border-color:#e7e7e7 #666 #666 #e7e7e7;color:#000}
+.inputaux_disabled{color:#999}
+.inputsearch{background:#fff url(https://s-static.ak.facebook.com/rsrc.php/v1/zV/r/IJYgcESal33.png) no-repeat left 4px;padding-left:17px}
+/* ............................................................................................................. Submit, etc */
+
+.uibutton.confirm {
+    border-color: #29447e #29447e #1a356e;
+    color: #fff;
+    background-color: #5B74A8;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#637bad), to(#5872a7));
+    background-image: -moz-linear-gradient(#637bad, #5872a7);
+    background-image: -o-linear-gradient(#637bad, #5872a7);
+    background-image: linear-gradient(#637bad, #5872a7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#637bad', EndColorStr='#5872a7'); /* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
+}
+
+.uibutton.confirm:active {
+    border-color: #29447E;
+    background: #4F6AA3;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ............................................................................................................. Special */
+
+.uibutton.special {
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    color: #fff;
+    background-color: #69a74e;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#75ae5c), to(#67a54b));
+    background-image: -moz-linear-gradient(#75ae5c, #67a54b);
+    background-image: -o-linear-gradient(#75ae5c, #67a54b);
+    background-image: linear-gradient(#75ae5c, #67a54b);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#75ae5c', EndColorStr='#67a54b'); /* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+}
+
+.uibutton.special:active {
+    border-color: #3b6e22;
+    background: #609946;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ............................................................................................................. Disable */
+
+.uibutton.disable {
+    z-index: 0;
+    border-color: #c8c8c8;
+    color: #b8b8b8;
+    background: #f2f2f2;
+    cursor: default;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.uibutton.confirm.disable {
+    color: #fff;
+    border-color: #94a2bf;
+    background: #adbad4;
+}
+
+.uibutton.special.disable {
+    color: #fff;
+    border-color: #9db791;
+    background: #b4d3a7;
+}
+
+.uibutton.disable.icon:before,
+.uibutton.disable.icon:after {
+    opacity: 0.5;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- BUTTON GROUPS */
+
+.uibutton-group {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* IE hacks */
+    zoom: 1; 
+    *display: inline; 
+}
+
+.uibutton + .uibutton,
+.uibutton + .uibutton-group,
+.uibutton-group + .uibutton,
+.uibutton-group + .uibutton-group {
+    margin-left: 3px;
+}
+
+.uibutton-group li {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.uibutton-group .uibutton {
+    float: left;
+    margin-left: -1px; 
+}
+
+.uibutton-group .uibutton:hover,
+.uibutton-group .uibutton:focus,
+.uibutton-group .uibutton:active {
+    z-index:2;
+}
+
+.uibutton-group > .uibutton:first-child,
+.uibutton-group li:first-child .uibutton { 
+    margin-left: 0; 
+}
+
+/* ------------------------------------------------------------------------------------------------------------- BUTTON CONTAINER */
+/* For mixing buttons and button groups, e.g., in a navigation bar */
+
+.uibutton-toolbar {
+    padding: 6px;
+    border-top: 1px solid #ccc;
+    background: #f2f2f2;
+}
+
+.uibutton-toolbar .uibutton,
+.uibutton-toolbar .uibutton-group {
+    vertical-align: bottom;
+}

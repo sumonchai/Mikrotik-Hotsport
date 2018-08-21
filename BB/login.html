@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login</title>
+<style>
+     /* ------------------------------------------------------------------------------------------------------------- RESET */
+
+        html, body, div, form, p,
+        code, pre {
+	margin: 0;
+	padding: 2;
+	border: 0;
+	vertical-align: baseline;
+}
+
+        /* ------------------------------------------------------------------------------------------------------------- BASE */
+        
+        html { font-size:100.01; }
+        body {
+	padding: 60px 0 20px;
+	font: 13px/1.333 "lucida grande", tahoma, sans-serif;
+	color: #333;
+	background: #fff;
+	background: -webkit-linear-gradient(#3B5998 40px, #F6F8FA 40px) no-repeat;
+	background: -moz-linear-gradient(#3B5998 40px, #F6F8FA 40px) no-repeat;
+	background: -o-linear-gradient(#3B5998 40px, #F6F8FA 40px) no-repeat;
+	background: linear-gradient(#3B5998 40px, #F6F8FA 40px) no-repeat;
+	-webkit-background-size: 100% 160px;
+	-moz-background-size: 100% 160px;
+	background-size: 100% 160px;
+        }
+
+        a { color: #980905; }
+        a:hover, a:focus, a:active { text-decoration: none; }
+
+        h1 {
+	margin: 0 0 0.5em;
+	font-size: 28px;
+	font-weight: normal;
+}
+        h2 { margin: 0 0 0.75em; font-size: 15px; }
+        p1 { margin: 0 0 1.333em; }
+        em { font-style: italic; }
+        table { border-collapse: separate; border-spacing: 0; margin:  0; vertical-align: middle; }
+        th { font-weight: bold; }
+        th, td {
+	padding: 5px 25px 5px 5px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 14px;
+}
+        pre, code { font-family: monospace, sans-serif; font-size: 1em; color:#080; }
+
+        /* ------------------------------------------------------------------------------------------------------------- TEMPLATE */
+
+        .container { position:relative; overflow:hidden; width: 600px; padding: 40px 10px; border: 1px solid #ccc; margin: 0 auto; background: #fff; }
+
+        .container pre,
+        .container .prettyprint { padding: 0; border: 0; margin: 0 0 20px; background: #fff; }
+
+        .ribbon {
+	position: absolute;
+	top: 50px;
+	right: 24px;
+	opacity: 0.9;
+}
+        .ribbon:hover, .ribbon:focus, .ribbon:active { opacity: 1; }
+        .ribbon img { display: block; border: 0; }
+
+        .header {
+	padding-right: 80px;
+	font-size: bold;
+}
+        .header p {
+	font-size: 24px;
+	color: #808080;
+}
+
+        .section { margin: 40px 0 20px; }
+
+        .example {
+	padding: 20px;
+	border: 1px solid #ccc;
+	margin: 10px -20px 20px;
+	text-align: center;
+}
+        .example p { margin: 15px 0 0; }
+        .example p:first-child { margin: 0; }
+
+     
+    .footer{
+	text-align: left;
+}
+</style>
+
+<link href="css/buttons.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+a:link {
+	text-decoration: none;
+	color: #666;
+}
+a:visited {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+	text-align: right;
+	font-family: "lucida grande", tahoma, sans-serif;
+	font-size: small;
+	color: #333;
+}
+.container div h {
+	font-weight: bold;
+}
+.container .section .header {
+}
+.container .section .header .header {
+	font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+</form>
+	
+<script type="text/javascript" src="/md5.js"></script>
+<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+<div class="container">
+<a class="ribbon" href="http://www.facebook.com/ljtechnology" target="_blank"><img src="img/wifi.jpg" alt="Lj Technology" height="80" /></a>
+  <div class="header">
+    <h1>A.P. Apartment</h1>
+    <p>Wifi Hotspot</p> 
+  </div>
+  <div class="section">
+    <h2 class="inputaux_disabled">&nbsp; &nbsp; &nbsp; Internet Login</h2>
+<p1>
+    <p class="header">&nbsp; &nbsp; &nbsp;ติดต่อเพื่อขอใช้บริการ ที่เบอร์ 087-799-5001</p> 
+   <p class="header">&nbsp; &nbsp; &nbsp;บริการห้องพัก รายวัน ติดต่อ เบอร์ 086-5120433</p> 
+    <p class="header">&nbsp;</p>
+    <div class="example">
+      <form  class="large_form" name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+<div align="center">
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+						
+<table width="272"  style="background-color: #ffffff">
+								<tr>
+					<td></td>
+					<td>$(if trial == 'yes')<a class="uibutton login"style="color:#ff0000" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">ทดลองใช้</a>$(endif)</td>
+					</tr>
+								<tr>
+										<td width="91" align="right">Login</td>
+								  <td width="158"><input class="inputtext" style="width: 120px" name="username" type="text" value="$(username)"/></td>
+								</tr>
+								<tr>
+										<td >Password</td>
+                                        <div class="field_container">
+										<td><input class="inputpassword" name="password" type="password"  style="width: 120px"/></td></div>
+								</tr>
+								<tr>
+								<td height="47"></td>
+								  <td>
+								 <input class="uibutton login" type="submit" value="Login" /></td>
+	    </tr>
+	  </table></div>
+	  </form>
+                $(if error)<br /><div class="inputradio" style="color: #FF8080; font-size: 14px">$(error)</div>$(endif)
+	</td>
+<div >
+  <div align="right"><a href="$(link-login-only)?target=th&amp;dst=$(link-orig-esc)" class="inputcheckbox"><span class="footer"></span></a></div>
+</div>
+</div>
+      
+  </div>
+  <div class="section">
+    <p class="header">&nbsp;&nbsp;&nbsp;&nbsp;<strong>A.P. Apartment</strong></p>
+<p class="header"> &nbsp;&nbsp;189/1 หมู่ 4 ต.ปลวกแดง อ.ปลวกแดง จ.ระยอง 21140</p>
+    <p class="header">&nbsp;&nbsp;โทรศัพท์ 089-8318094, 087-799-5001</p>
+     </div>
+</div></div></div></div>
+<div class="footer">.</div>
+</body>
+</html>
