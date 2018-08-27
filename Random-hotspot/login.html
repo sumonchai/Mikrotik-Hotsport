@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1-">
+<title>Login</title>
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="-1" />	
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<link rel="stylesheet" href="login.css" media="screen">
+ 
+
+</head>
+<body class="login" onload='return ran_col()'>
+<script> function ran_col() { //function name var color; 
+// hexadecimal starting symbol 
+var letters = ['f44336','e91e63','9c27b0','673ab7','2196f3','03a9f4','00bcd4','009688','4caf50','8bc34a','cddc39','ffeb3b','ffc107','ff9800','ff5722','607d8b']; 
+//Set your colors here 
+var x= document.getElementsByClassName("login"); var i; for(i=0;i<x.length;i++) { color="#"; color += letters[Math.floor(Math.random() * letters.length)]; x[i].style.backgroundColor = color; } document.getElementByclass("login").style.display = "block"; } 
+</script>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+
+<form class="vertical-form" name="login" action="$(link-login-only)" method="post"
+	$(if chap-id) onSubmit="return doLogin()" $(endif)>
+<input type="hidden" name="dst" value="$(link-orig)" />
+<input type="hidden" name="popup" value="true" />
+<div style="margin:0;padding:0;display:inline"></div>
+<div id="users"></div> 
+<script type="text/javascript">
+    var imgCount = 16;
+        var dir = 'users/';
+        var randomCount = Math.round(Math.random() * (imgCount - 1)) + 1;
+        var images = new Array
+                images[1] = "1.png",
+                images[2] = "2.png",
+                images[3] = "3.png",
+				images[4] = "4.png",
+                images[5] = "5.png",
+                images[6] = "6.png",
+				images[7] = "7.png",
+                images[8] = "8.png",
+                images[9] = "9.png",
+				images[10] = "10.png",
+                images[11] = "11.png",
+                images[12] = "12.png",
+				images[13] = "13.png",
+                images[14] = "14.png",
+                images[15] = "15.png",
+				images[16] = "16.png",
+           
+        document.getElementById("users").style.backgroundImage = "url(" + dir + images[randomCount] + ")"; 
+   </script>
+<input name="username" type="text" value="$(username)" placeholder="User" size="30" />
+<input autocomplete="off" name="password" type="password" label="false" placeholder="Password" size="30" />
+<input name="submit" type="submit" value=" " />
+<div class='footer'>
+<p>$(if trial == 'yes')Free trial available, <a href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">click here</a>.$(endif)</p>
+<p>$(if error)<span style="color: #FF8080; font-size: 16px">$(error)</span>$(endif)</p>
+<br>
+<p>
+</p>
+</div>
+</form>
+
+
+
+
+</body>
+</html>
