@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="pragma" content="no-cache" />
+	<meta http-equiv="expires" content="-1" />
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>Bangkok Crystal</title>
+
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+		<!-- Nav -->
+		<nav id="nav" class="navbar">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="login.html">
+							<img class="logo" src="img/logo.png" alt="logo">
+							<img class="logo-alt" src="img/logo-alt.png" alt="logo">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<li><a href="login.html">Home</a></li>
+
+					<li><a href="$(link-login-only)?target=lv&amp;dst=$(link-orig-esc)">THA</a></li>
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+		<!-- Pricing -->
+		<div id="pricing" class="section md-padding">
+
+			<!-- Container -->
+			<div class="container">
+
+				<!-- Row -->
+				<div class="row">
+					<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+						<!-- Section header -->
+						<div class="section-header text-center">
+							<h2 class="title">
+								$(if login-by == 'trial') Welcome trial user! $(elif login-by != 'mac') Welcome $(username)! $(endif)
+							</h2>
+						</div>
+						<!-- /Section header -->
+
+						<!-- pricing -->
+						<div class="col-sm-4">
+						</div>
+						<!-- /pricing -->
+
+						<!-- pricing -->
+						<div class="col-sm-4">
+							<div class="pricing">
+								<div class="price-head">
+									<span class="price-title">Detail</span>
+									<!-- <div class="price">
+										<h3>$39<span class="duration">/ month</span></h3>
+									</div> -->
+								</div>
+								<ul class="price-content">
+									<li>
+										<p>IP address: $(ip)</p>
+									</li>
+									<li>
+										<p>bytes up/down: $(bytes-in-nice) / $(bytes-out-nice)</p>
+									</li>
+									$(if session-time-left)
+									<li>
+										<p>
+
+											connected / left: $(uptime) / $(session-time-left) $(else) connected: $(uptime)
+
+										</p>
+									</li>
+									$(endif)
+									<li>
+										<p>
+											$(if blocked == 'yes') status:
+											<div style="color: #FF8080">
+												<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div>
+											$(elif refresh-timeout)
+											<tr>
+												<td align="right">status refresh:</td>
+												<td>$(refresh-timeout)</td>
+												$(endif)
+										</p>
+									</li>
+									$(if login-by-mac != 'yes')
+									<br>
+									<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+									<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+									<!-- end of user manager link -->
+
+									$(endif)
+
+								</ul>
+								<div class="price-btn">
+									<button type="submit" class="outline-btn">log off</button>
+								</div>
+					</form>
+					</div>
+					</div>
+					<!-- /pricing -->
+
+				</div>
+				<!-- Row -->
+
+			</div>
+			<!-- /Container -->
+
+		</div>
+		<!-- /Pricing -->
+
+
+
+
+
+		<!-- Preloader -->
+		<div id="preloader">
+			<div class="preloader">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<!-- /Preloader -->
+
+		<!-- jQuery Plugins -->
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>
