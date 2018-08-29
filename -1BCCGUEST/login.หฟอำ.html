@@ -1,0 +1,422 @@
+<!DOCTYPE HTML>
+<!--
+	Tessellate 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!--
+	Adapted for Mikrotik by Binary Heartbeat. Free for personal and commercial use under the CCA 3.0 license
+	http://www.binaryheartbeat.blogspot.com
+-->
+<html>
+	<head>
+		<title>Hotspot Login</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+	</head>
+	<body>
+$(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="$(link-orig)" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+
+
+		<!-- Header -->
+			<section id="header" class="dark">
+				<header>
+					<img src="images/BizarreLogo.png">
+					<!-- <h1>Welcome to This Hotspot</h1>-->
+					<!-- <p>Please scroll down to log in</a></p> -->
+				</header>
+				</section>
+				<section class="main">
+					<div class="content style4 featured">
+						<header>
+							<div class="container">
+								<!-- <h2>Please enter your username and password to log in</h2> -->
+								<p >Username and password can be obtained by contacting Waiter.</p>
+							</div>
+						</header>
+						<div class="container small">
+							<form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+							<input type="hidden" name="dst" value="$(link-orig)" />
+							<input type="hidden" name="popup" value="true" />
+
+								<div class="row half">
+									<div class="6u"><input name="username" type="text" class="text" value="$(username)" placeholder="Username" /></div>
+									<div class="6u"><input name="password" type="password" class="text" placeholder="Password" /></div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="submit" class="button" value="Login" /></li>
+											<li><input type="reset" class="button alt" value="Clear Form" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+
+				</div>
+				</section>
+				<!-- Footer -->
+					<section id="footer">
+						<div class="copyright">
+							<ul class="menu">
+								<li>&copy; LJTECH.BiZ. All rights reserved.</li>
+							<!--	<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+								<li>Mikrotik adaptation: <a href="http://www.binaryheartbeat.blogspot.com">Binary Heartbeat</a></li>
+							-->
+							<!-- </ul>
+						</div>
+					</section>
+
+
+		<!-- First -->
+			<!-- <section id="first" class="main">
+				<header>
+					<div class="container">
+						<h2>Please enter your username and password to log in</h2>
+						<p>Username and password can be obtained by contacting bellboy.</p>
+					</div>
+				</header>
+
+				<div class="content style4 featured">
+					<div class="container small">
+						<form name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" />
+						<input type="hidden" name="popup" value="true" />
+
+							<div class="row half">
+								<div class="6u"><input name="username" type="text" class="text" value="$(username)" placeholder="Username" /></div>
+								<div class="6u"><input name="password" type="password" class="text" placeholder="Password" /></div>
+							</div>
+							<div class="row">
+								<div class="12u">
+									<ul class="actions">
+										<li><input type="submit" class="button" value="Login" /></li>
+										<li><input type="reset" class="button alt" value="Clear Form" /></li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+
+			</section> -->
+
+		<!-- Second -->
+			<!-- <section id="second" class="main">
+				<div class="content dark style3">
+					<div class="container">
+						<div class="row">
+							<div >
+								<section>
+									<h3>Terms and Conditions</h3>
+									<h2>By using this hotspot you agree to the following terms and conditions</h2>
+									<p>It is a current trend for private and public entities to set up a wireless local-area, or wireless fidelity, network (“Wi-Fi HotSpot”) to provide free internet access to the public.   </p>
+									<p>Private businesses, such as hotels, shopping centers and cafes, may set up a Wi-Fi HotSpot to attract consumer traffic and for advertising purposes.  Because the technology and practice are so new, there is great speculation over novel liability issues that may arise in connection with a Wi-Fi HotSpot established by a private business.  For example, could the business owner be held liable for (i) cyber crimes committed by a third party using the access point; (ii) content provided to third party users through the wireless access point; (iii) theft of information from a user because the access is not secure; or (iv) harm to children lured by a predator through unsupervised use of the access point?</p>
+									<p>With respect to crimes committed by a user, the federal Computer Fraud and Abuse Act (“CFAA”), and 18 Pa. C.S. 7611, criminalize certain acts of unauthorized internet access.   A provision of both laws require that a user intentionally access a network without authorization (ie, a user parked in a van outside a private business or residence, who hacked into the private wireless access point for the business or residence, would be accessing the network without authorization).   This ‘unauthorized use’ element of a cyber crime (such as identity theft) committed by a user through a public access Wi-Fi HotSpot is difficult to prove when access is open to the public and requires no authority for use. </p>
+									<p>With respect to content (such as copyright infringement, or child pornography), to date the courts and legislatures have been reluctant to hold ISP or wireless access providers responsible or liable for content on the internet, unless the provider actually produces or exercises control and supervision over the objectionable content.  There are ISP immunity provisions for content in the Communications Decency Act of 1996 (provisions of which have been held to violate constitutional rights by the Supreme Court), and the Digital Millennium Copyright Act of 1998.  These immunity provisions would not necessarily extend to the private business owner setting up a Wi-Fi HotSpot.</p>
+									<p>With respect to the security of the access, wireless internet access is not secure, by its nature it is broadcast over unrestricted radio or air space.  Users or site providers can use passwords and encryption devices in efforts to increase security, however as a practical matter many users never activate these capabilities on their personal computers, and the business owner’s motivation in providing the HotSpot may be stunted if users must sign in for a password in order to obtain access.                          </p>
+									<p>With respect to the example of harm to children caused by a sexual predator, this issue could involve more than just internet services and content available to the public.  There is an additional potential issue with respect to the physical presence of unsupervised minors at the private business HotSpot location.  If a business owner were reasonably aware that unsupervised minors were using the Wi-Fi access point, or had reason to know that predators were using the access point to lure children to the HotSpot location, the business owner could be liable for failing to take reasonable preventative measures. </p>
+									<p>The predatory luring of children over the internet, and internet child pornography, is an international concern.  The US Supreme Court has ruled against or limited enforcement of both the federal Communications Decency Act and the Child Online Protection Act on constitutional grounds.  Congress’ third attempt, the Children’s Internet Protection Act, has survived Supreme Court scrutiny but not without dissent.  This Act requires that public libraries install child filtering technology on internet access in order to receive federal funds.  Libraries also customarily adopt policies requiring that minors accessing the internet be supervised by an adult.  No such provisions or restrictions are in place for private business or municipalities providing Wi-Fi HotSpots. </p>
+									<p>Unfortunately public Wi-Fi access is so new the courts have not established any definitive answer to these liability questions.  It is likely some form of the tort premises liability standard adopted in Pennsylvania would provide the basis for determining liability of a private HotSpot provider in the Commonwealth.  This standard can be summarized as “the failure of the possessor to exercise reasonable care to (a) discover that such acts are being done or are likely to be done, or (b) give a warning adequate to enable the visitors to avoid the harm, or otherwise to protect them against it”.    </p>
+									<p>Consult your attorneys before setting up a Wi-Fi Hotspot at your business location. The following are some steps a business owner can consider in setting up a Wi-Fi HotSpot to reduce potential liability:     </p>
+									<p>(a)   The agreement with the WAP or ISP can ensure that responsibility for providing internet access and services and any liability for internet service or content remains with the WAP or ISP;</p>
+									<p>(b)   The Wi-Fi HotSpot access point can contain a use agreement and disclaimer (sometimes called a “splash page”) that requires the user to click through an agreement before enabling access;</p>
+									<p>(c)   The use agreement and disclaimer can disclose appropriate terms and conditions of use, which prohibit and do not authorize, for example, illegal activity, copyright violations, pornographic or corrupt content, spam, solicitations, advertising, or use of the service by unsupervised minors.</p>
+									<p>(d)   The use agreement and disclaimer can disclose appropriate warnings, such as a warning that the wireless access is not secure; and that internet content is not regulated or controlled by the business; and that there are not filtering devices in place.</p>
+									<p>(e)   Analyze the purpose for providing the Wi-Fi HotSpot, and the area it will cover.  For some purposes, a controlled sign-in or password access system may be appropriate and increase security and protection for the users.  Filtering programs may also be appropriate for certain uses, and can be disabled for users upon request using a password system (to date the internet filtering programs are not reputed to be very effective). </p>
+									<p>(f)     The splash page can include notice that the private property remains private property, and that the provision of the Wi-Fi HotSpot is not intended as a dedication of the area for public use or as a public forum.</p>
+									<p>Landlord’s may want to include language in leases (i) limiting a tenant’s right to install a Wi-Fi Hotspot at the premises without the landlord’s prior approval, (ii) indemnifying the landlord for the Wi-Fi use, and (iii) agreeing to remove or modify the Wi-Fi access points in the event the landlord determines it is disruptive, a nuisance or a potential hazard.</p>
+									<p>Keep abreast of developments with respect to Wi-Fi HotSpot access. <br />
+									<footer>
+										<a href="#third" class="button scrolly">Next</a>
+									</footer>
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+		<!-- Third -->
+		<!--	<section id="third" class="main">
+				<header>
+					<div class="container">
+						<h2>Ornare varius lorem ipsum ante lectus</h2>
+						<p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
+						feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
+					</div>
+				</header>
+				<div class="content dark style3">
+					<div class="container">
+						<span class="image featured"><img src="images/pic07.jpg" alt="" /></span>
+						<div class="row">
+							<div class="4u">
+								<h3>Diam vivamus turpis lorem sodales lectus ornare</h3>
+								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
+								tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
+								vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
+								augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
+								lorem ipsum dolor placerat magna tempus feugiat.</p>
+								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
+								euismod lorem ipsum dolor sit amet consequat. vivamus nisi eu eget ornare varius
+								gravida dolore euismod lorem ipsum dolor sit amet consequat. vivamus nisi eu
+								eget ornare et magna.</p>
+							</div>
+							<div class="4u">
+								<p>Gravida dis placerat lectus ante vel nunc euismod est turpis sodales. Diam
+								tempor dui lacinia eget ornare varius gravida. Gravida dis placerat lectus ante
+								vel nunc euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus
+								augue cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
+								lorem ipsum dolor placerat magna tempus feugiat.</p>
+								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida dolore
+								euismod lorem ipsum dolor sit amet consequat eget ornare varius gravida euismod.
+								Gravida dis lorem ipsum dolor placerat magna tempus feugiat magna tempus lorem.</p>
+								<p>Lectus ante vel nunc euismod est turpis sodales. Diam tempor dui lacinia
+								accumsan vivamus augue cubilia.</p>
+							</div>
+							<div class="4u">
+								<p>Placerat lectus ante vel nunc euismod est turpis sodales. Diam tempor dui
+								lacinia eget ornare varius gravida. Gravida dis placerat lectus ante vel nunc
+								euismod est turpis sodales. Diam tempor dui lacinia accumsan vivamus augue
+								cubilia vivamus nisi eu eget ornare varius gravida euismod.  Gravida dis
+								lorem ipsum dolor placerat magna tempus feugiat. Lectus ante vel nunc euismod
+								est turpis sodales. Diam tempor dui lacinia dolore.</p>
+								<p>Accumsan vivamus augue cubilia vivamus nisi eu eget ornare varius gravida
+								dolore euismod lorem ipsum dolor sit amet conseismod lorem ipsum dolor sit amet
+								consequat lorem ipsum consequat feugiat sed tempus euismod feugiat veroeros.</p>
+								<footer>
+									<a href="#fourth" class="button scrolly">Ipsum ornare lorem dolor</a>
+								</footer>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+		<!-- Basic Elements -->
+		<!--
+			<section class="main">
+				<header>
+					<div class="container">
+						<h2>A Whole Lotta Elements</h2>
+						<p>General purpose elements for every general purpose. Or something like that.</p>
+					</div>
+				</header>
+				<div class="content style1 dark">
+					<div class="container">
+						<section>
+							<header>
+								<h3>Paragraph</h3>
+								<p>This is a byline</p>
+							</header>
+							<p>Phasellus nisl nisl, varius id <sup>porttitor sed pellentesque</sup> ac orci. Pellentesque
+							habitant <strong>strong</strong> tristique <b>bold</b> et netus <i>italic</i> malesuada <em>emphasized</em> ac turpis egestas. Morbi
+							leo suscipit ut. Praesent <sub>id turpis vitae</sub> turpis pretium ultricies. Vestibulum sit
+							amet risus elit.</p>
+						</section>
+						<section>
+							<header>
+								<h3>Blockquote</h3>
+							</header>
+							<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget.
+							tempus euismod. Vestibulum ante ipsum primis in faucibus. Cras sit amet urna eros, id egestas
+							tempus ante ipsum primis in faucibus orci luctus et ultrices.</blockquote>
+						</section>
+						<section>
+							<header>
+								<h3>Divider</h3>
+							</header>
+							<p>Donec consectetur <a href="#">vestibulum dolor et pulvinar</a>. Etiam vel felis enim, at viverra
+							ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+							facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+							tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+							posuere cubilia.</p>
+							<hr />
+							<p>Donec consectetur vestibulum dolor et pulvinar. Etiam vel felis enim, at viverra
+							ligula. Ut porttitor sagittis lorem, quis eleifend nisi ornare vel. Praesent nec orci
+							facilisis leo magna. Cras sit amet urna eros, id egestas urna. Quisque aliquam
+							tempus euismod. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+							posuere cubilia.</p>
+						</section>
+						<section>
+							<header>
+								<h3>Unordered List</h3>
+							</header>
+							<ul class="default">
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+							</ul>
+						</section>
+						<section>
+							<header>
+								<h3>Ordered List</h3>
+							</header>
+							<ol class="default">
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+								<li>Donec consectetur vestibulum dolor et vel felis enim at viverra ligula. Ut porttitor sagittis lorem.</li>
+							</ol>
+						</section>
+						<section>
+							<header>
+								<h3>Table</h3>
+							</header>
+							<div class="table-wrapper">
+								<table class="default">
+									<thead>
+										<tr>
+											<th>ID</th>
+											<th>Name</th>
+											<th>Description</th>
+											<th>Price</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>00001</td>
+											<td>Lorem ipsum dolor</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>00002</td>
+											<td>Sit amet nullam</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>00003</td>
+											<td>Feugiat felis viverra</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>29.99</td>
+										</tr>
+										<tr>
+											<td>00004</td>
+											<td>Sagittis enim felis</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>19.99</td>
+										</tr>
+										<tr>
+											<td>00005</td>
+											<td>Nullam sed vestibulum</td>
+											<td>Ut porttitor sagittis lorem quis nisi ornare.</td>
+											<td>19.99</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="3"></td>
+											<td>100.00</td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</section>
+						<section>
+							<header>
+								<h3>Form</h3>
+							</header>
+							<form method="post" action="#">
+								<div class="row half">
+									<div class="6u">
+										<input class="text" type="text" name="name" id="name" value="" placeholder="John Doe" />
+									</div>
+									<div class="6u">
+										<input class="text" type="text" name="email" id="email" value="" placeholder="johndoe@domain.tld" />
+									</div>
+								</div>
+								<div class="row half">
+									<div class="12u">
+										<div class="select">
+											<select name="department" id="department">
+												<option value="">Choose a department</option>
+												<option value="1">Manufacturing</option>
+												<option value="2">Administration</option>
+												<option value="3">Support</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="row half">
+									<div class="12u">
+										<input class="text" type="text" name="subject" id="subject" value="" placeholder="Enter your subject" />
+									</div>
+								</div>
+								<div class="row half">
+									<div class="12u">
+										<textarea name="message" id="message" placeholder="Enter your message"></textarea>
+									</div>
+								</div>
+								<div class="row">
+									<div class="12u">
+										<ul class="actions">
+											<li><input type="submit" class="button" value="Send Message" /></li>
+											<li><input type="reset" class="button alt" value="Clear Form" /></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</section>
+					</div>
+				</div>
+			</section>
+		-->
+
+		<!-- Fourth -->
+			<!-- <section id="fourth" class="main">
+
+			</section> -->
+
+		<!-- Footer -->
+			<!-- <section id="footer">
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; LJTECH.BiZ. All rights reserved.</li>
+					<!--	<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+						<li>Mikrotik adaptation: <a href="http://www.binaryheartbeat.blogspot.com">Binary Heartbeat</a></li>
+					-->
+					<!-- </ul>
+				</div>
+			</section> -->
+
+	</body>
+</html>

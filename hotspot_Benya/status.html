@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+<!-- ชุดคำสั่งเพิ่มเติม -->
+
+<!-- พื้นหลัง -->
+  <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+		background: url(img/bg.jpg) no-repeat center top;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+</style>
+<style>
+h1 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h1 {text-shadow: black 0.1em 0.1em 0.2em}
+h2 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h2 {text-shadow: black 0.1em 0.1em 0.2em}
+h3 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+	  h3 {text-shadow: black 0.1em 0.1em 0.2em}
+h4 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h5 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h6 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+p {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+
+</style>
+
+
+<!-- หมดชุดคำสังเพิ่มเติม -->
+    <title>-: Benya Hotel :-<title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body><font size="" color="#ffffff">
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li>Your Device&nbsp;<span class="glyphicon glyphicon-signal"></span></li>
+          <li>&nbsp;IP: $(ip)&nbsp;</li>
+          <li>MAC: $(mac)</li>
+        </ul>
+        <h3 class="text-muted">Benya Hotel Hotspot</h3>
+      </div>
+
+      <div>
+        <h3>Status<span class="label label-success"></span>
+</h3>
+<!--
+        <p class="lead"><h5> ทางระบบได้มีการเก็บข้อมูลการใช้งานทั้งหมด ตาม พรบ. คอมพิวเตอร์ พ.ศ. 2550 เพื่อป้องกันการกระทำที่ผิดกฏหมาย.</p></h5>
+-->
+    <div id="" class="">
+				<h3>ท่านได้เข้าสู่อินเตอร์เน็ตเป็นที่เรียบร้อย</h3>
+	<div id="" align="center">
+		 <table width="100%" height="100%">
+		<tr>
+		<td align="center" valign="middle">
+		<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+		<table border="1" class="" width="400">
+		$(if login-by == 'trial')
+			<br><div style="text-align: center;">Welcome trial user!</div>
+			$(elif login-by != 'mac')
+			<br><div style="text-align: center;">ยินดีต้อนรับ $(username) ค่ะ</div><br>
+		$(endif)
+			<tr><td align="right">bytes up/down:</font></td><td><font size="" color="#ff0000">$(bytes-in-nice) / $(bytes-out-nice)</font></td></tr>
+		$(if session-time-left)
+			<tr><td align="right">connected / left:</font></td><td><font size="" color="#ff0000">$(uptime) / $(session-time-left)</font></td></tr>
+		$(else)
+			<tr><td align="right">connected:</font></td><td><font size="" color="#ff0000">$(uptime)</font></td></tr>
+		$(endif)
+		$(if blocked == 'yes')
+			<tr><td align="right">status:</font></td><td><div style="color: #FF8080">
+		<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+		$(elif refresh-timeout)
+			<tr><td align="right">status refresh:</font></td><td><font size="" color="#ff0000">$(refresh-timeout)</font></td>
+		$(endif)
+
+		</table>
+		$(if login-by-mac != 'yes')
+		<br>
+		<!-- user manager link. if user manager resides on other router, replace $(hostname) by its address
+		<button onclick="document.location='http://$(hostname)/user?subs='; return false;">status</button>
+		<!-- end of user manager link -->
+		<input class="btn btn-lg btn-primary btn-block" type="submit" value="ออกจากระบบ">
+		$(endif)
+		</form>
+
+		</td>
+		</table>
+		</div>	 
+		</div>		
+      <div class="row marketing">
+        <div class="col-lg-6">
+        </div>
+      <div class="col-lg-6">
+      </div>
+      </div> 
+</div>
+      <div class="footer">
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+ </font>
+ <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+ </body>
+</html>

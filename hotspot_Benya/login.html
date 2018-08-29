@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<!-- ชุดคำสั่งเพิ่มเติม -->
+
+<!-- พื้นหลัง -->
+  <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+		background: url(img/bg.jpg) no-repeat center top;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
+a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
+img {border: none;}
+td { font-size: 14px; color: #7A7A7A; }
+</style>
+
+<style>
+h1 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h1 {text-shadow: black 0.1em 0.1em 0.2em}
+h2 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h2 {text-shadow: black 0.1em 0.1em 0.2em}
+h3 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+	  h3 {text-shadow: black 0.1em 0.1em 0.2em}
+h4 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h5 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+h6 {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+p {text-shadow: -1px 0 black, 0 1px black,
+      1px 0 black, 0 -1px black}
+
+</style>
+
+
+<!-- หมดชุดคำสังเพิ่มเติม -->
+    <title>-: Benya Hotel :-</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body><font size="" color="#ffffff">
+  $(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="login-success.html" /><!-- value="$(link-orig)"  -->
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="/md5.js"></script>
+	<script type="text/javascript">
+	<!--
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	//-->
+	</script>
+$(endif)
+    <div class="container">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li>Your Device&nbsp;<span class="glyphicon glyphicon-signal"></span>
+          <li>&nbsp;IP: $(ip)&nbsp;
+          <li>MAC: $(mac)&nbsp;
+        </ul>
+		<img src="benya1.png" >
+        <h3 class="text-muted">Free Internet Hotspot</h3>
+      </div>
+
+      <div>
+        <!--
+		<h3>ลงชื่อเข้าใช้งาน</h3>
+        <p class="lead"><h5> ทางระบบได้มีการเก็บข้อมูลการใช้งานทั้งหมด ตาม พรบ. คอมพิวเตอร์ พ.ศ. 2550 เพื่อป้องกันการกระทำที่ผิดกฏหมาย.</p></h5>
+		--><br>
+      	<div id="" align="center">
+				
+				<form name="login" action="$(link-login-only)" method="post"
+					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
+						<input type="hidden" name="dst" value="$(link-orig)" /><!-- หน้าเว็บที่จะให้ตัดเข้า -->
+						<input type="hidden" name="popup" value="true" />
+        <input type="text"  class="form-control" style="width: 50%" name="username"  value="$(username)" placeholder="Username" required autofocus><br>
+        <input type="password" class="form-control" style="width: 50%" placeholder="Password" name="password" required>
+		 <td height="54" align="center"><br></td>
+<!--<div class="notice" style="color: #c1c1c1; font-size: 11px">กรุณาล็อคอินก่อน เพื่อใช้งานอินเตอร์เน็ต<br />$(if trial == 'yes')หากต้องการทดลองใช้งาน, <a style="color: #FF8080"href="$(link-login-only)?dst=login-success.html&amp;username=T-$(mac-esc)">คลิ้กที่นี่</a>.$(endif)</div>
+    <!--      <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>-->
+        <button class="btn btn-lg btn-primary btn-block" style="width: 50%" type="submit">ลงชื่อเข้าใช้&nbsp;<span class="glyphicon glyphicon-log-in"></span></button>
+		<br>
+		 <div align="center">$(if error)<br>
+                <div style="color: #FF8080; font-size: 16px">$(error)</div>$(endif)
+                <script type="text/javascript">
+				var error = "$(error)";
+				if (error == "no valid profile found"){ document.write("บัตรนี้หมดอายุใช้งานแล้วค่ะ ขอบคุณที่ใช้บริการ " );}
+				else if (error == "RADIUS server is not responding"){ document.write("ไม่มีชื่อผู้ใช้อยู่ในระบบ");}
+				</script>
+				</div>
+		</form>
+		</div>
+      <div class="row marketing" >
+        <!--<div class="col-lg-6">
+        <h4><span class="glyphicon glyphicon-shopping-cart"></span>&nbsp;ซื้อรหัสด้วย True Money <a href="#" class="btn btn-danger" role="button"> <font color="#ffffff">คลิ้กที่นี่</font></a></h4>
+          <p>ไม่จำเป็นต้องใช้โทรศัพท์ TRUE สามารถใช้บัตรทรูมันนี่ซื้อรหัส Wifi ได้ทันที</p>
+
+          <h4><span class="glyphicon glyphicon-qrcode"></span>&nbsp;รับรหัส WiFi  <a href="#" class="btn btn-success" role="button"> <font color="#ffffff">คลิ้กที่นี่</a></h4>
+          <p>หลังจากซื้อรหัสเรียบร้อยเเล้ว หรือลืมรหัสผ่านสามารถขอรับรหัสใหม่ได้ที่นี่</p>
+
+          <h4><span class="glyphicon glyphicon-info-sign"></span>&nbsp;วิธีซื้อรหัสด้วย True Money  <a class="btn btn-warning" role="button"  href="#" > <font color="#ffffff">คลิ้กที่นี่</a></h4>
+          <p>ติดต่อสอบถามเพิ่มเติม <span class="glyphicon glyphicon-earphone"></span>xxx-xxx-xxxx</p>
+        </div>-->
+
+      <div class="col-lg-6">
+          <h4><span class="glyphicon glyphicon-envelope"></span>&nbsp;ประชาสัมพันธ์ <span class="label label-info">New</span></h4>
+          <!-- <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+          <h4>Subheading</h4>
+          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+		  --->
+        </div> 
+      </div>
+
+      <div class="footer">
+      </div>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+ </font>
+ <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+ </body>
+</html>

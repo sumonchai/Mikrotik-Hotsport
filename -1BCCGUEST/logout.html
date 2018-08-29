@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<!--
+	Tessellate 1.0 by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<!--
+	Adapted for Mikrotik by Binary Heartbeat. Free for personal and commercial use under the CCA 3.0 license
+	http://www.binaryheartbeat.blogspot.com
+-->
+<html>
+	<head>
+		<title>Hotspot Status</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic" rel="stylesheet" type="text/css" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel-noscript.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-wide.css" />
+		</noscript>
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+		<script language="JavaScript">
+			<!--
+			$(if advert-pending == 'yes')
+				var popup = '';
+				function focusAdvert() {
+				if (window.focus) popup.focus();
+				}
+				function openAdvert() {
+				popup = open('$(link-advert)', 'hotspot_advert', '');
+				setTimeout("focusAdvert()", 1000);
+				}
+			$(endif)
+				function openLogout() {
+				if (window.name != 'hotspot_status') return true;
+					open('$(link-logout)', 'hotspot_logout', 'toolbar=0,location=0,directories=0,status=0,menubars=0,resizable=1,width=280,height=250');
+				window.close();
+				return false;
+				}
+			//-->
+		</script>
+	</head>
+	<body
+	$(if advert-pending == 'yes')
+	onLoad="openAdvert()"
+	$(endif)>
+
+<form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+		<!-- Header -->
+			<section id="header" class="dark">
+				<header>
+					<img src="images/logo.png">
+					$(if login-by == 'trial')
+						<h1>Welcome Trial User</h1>
+					$(elif login-by != 'mac')
+						<h1>Welcome $(username)!</h1>
+					$(endif)
+				</header>
+				<div class="content style4 featured">
+					<div class="container small">
+					<table>
+						<tr><td align="right">IP address:</td><td>$(ip)</td></tr>
+						<tr><td align="right">bytes up/down:</td><td>$(bytes-in-nice) / $(bytes-out-nice)</td></tr>
+					$(if session-time-left)
+						<tr><td align="right">connected / left:</td><td>$(uptime) / $(session-time-left)</td></tr>
+					$(else)
+						<tr><td align="right">connected:</td><td>$(uptime)</td></tr>
+					$(endif)
+					$(if blocked == 'yes')
+						<tr><td align="right">status:</td><td><div style="color: #FF8080">
+					<a href="$(link-advert)" target="hotspot_advert">advertisement</a> required</div></td>
+					$(elif refresh-timeout)
+						<tr><td align="right">status refresh:</td><td>$(refresh-timeout)</td>
+					$(endif)
+					</table>
+					$(if login-by-mac != 'yes')
+						<input type="submit" class="button" value="Log Off" />
+					$(endif)
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<section id="footer">
+				<div class="copyright">
+					<ul class="menu">
+						<li>&copy; LJTECH.BiZ. All rights reserved.</li>
+					<!--	<li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+						<li>Mikrotik adaptation: <a href="http://www.binaryheartbeat.blogspot.com">Binary Heartbeat</a></li>
+					-->
+				</div>
+			</section>
+</form>
+	</body>
+</html>
