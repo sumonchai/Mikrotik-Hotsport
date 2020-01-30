@@ -1,0 +1,86 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Web: Hotel Login</title>
+    <link rel="stylesheet" href="css/lj.css">
+    <link href="img/LJ.ico" rel="shortcut icon">
+</head>
+
+<body style="position: static; left: 0px;">
+    <!-- MK -->
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+    <script type="text/javascript" src="js/md5.js"></script>
+    <script type="text/javascript">
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+    </script>
+    $(endif)
+    <!-- MK -->
+    <div class="page">
+        <div class="header">
+            <div class="logo">
+                <a target="_blank" href="https://www.oyorooms.com/th/87148-oyo-hotels-oyo-442-suan-palm-garden-view-rayong/">
+                    <img class="logo" alt="Web Login for Suam Plam Hotel"
+                        src="./img/Suan_Plam_White.png">
+                </a>
+            </div>
+            <div id="login_links"><a target="_blank" href="https://www.oyorooms.com/th/87148-oyo-hotels-oyo-442-suan-palm-garden-view-rayong/">Book a Room </a>  </div>
+        </div>
+        <div class="form_wrapper">
+            <div class="form">
+                <div class="right">
+                    <div class="banner">               
+                            <img class="banner" src="./img/blank.gif">
+                        </a>
+                    </div>
+                </div>
+                <div class="left">
+                    <form method="post" action="$(link-login-only)" name="login"
+                        $(if chap-id) onSubmit="return doLogin()" $(endif)>
+                        <input type="hidden" name="dst" value="$(link-orig)">
+                        <!-- <input type="hidden" name="popup" value="true"> -->
+                        <div id="form_title">Internet Web Login</div>
+                 
+                        <div>User</div>
+                        <input type="text" tabindex="11" name="username" class="user" value="$(username)" >
+                        <div>Password</div>
+                        <input type="password" tabindex="12" name="password" class="pwd">
+
+                        <input type="submit" tabindex="13" id="login" name="submit_btn" class="submit" value="Log In"
+                            onclick="$Login.submitForm();">
+
+                        <!--     <a class="submit" href="https://" id="forgot_password">Trial Access?</a>
+
+                        <div id="options">
+                         <div id="rememberinfo">
+                                <input type="checkbox" tabindex="14" name="remember" id="remember">
+                                <label for="remember">Remember this info</label>
+                            </div>      -->
+                </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="footer">      
+    </div>
+    <div class="base">                    
+            <a target="_blank" href="http://">LJ TECHNOLOGY Copyright © 2018. All Rights Reserved.</a>
+        </div>
+    </div>
+</body>
+<div> </div>
+</html>
